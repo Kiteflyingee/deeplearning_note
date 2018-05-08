@@ -8,14 +8,21 @@
 
 ![](2018-05-08-20-51-28.png)
 > $b_{3}^{2}:$表示第2层的第3个神经元的偏向bais
-
+-----
 ### 正向传播
 
->公式$:\alpha_{j}^{l}=\sigma(\sum_{k}\omega_{jk}^{l}\alpha_{k}^{l-1}+b_{j}^{l})$
+###### 公式$:\alpha_{j}^{l}=\sigma(\sum_{k}\omega_{jk}^{l}\alpha_{k}^{l-1}+b_{j}^{l})$
 
 分为两步
 1. $\omega\alpha+b$ 加权求和
 2. 对加权求和整体使用sigmoid函数求出下层的输出值 
+##### 数据结构
+> 对于<font color='red'>每一层(l)</font>,定义一个权重矩阵     (weight matrix):$\omega^{l}$，这个权重矩阵包含当前层的所有神经元到前一层的所有神经元的权重
+>> $\omega_{jk}^{l}:$表示第从第l层的的第j个神经元到第l-1层的第j个神经元的权重weight 
 
->可以使用下面这个方法优化公式在markdown里的效果
-![11](http://latex.codecogs.com/png.latex?aa)
+>对于每一层(l),定义一个偏向向量(bais vector):$b^{l}$
+>> $b_{j}^{l}$则表示l层的第k个神经元的bais
+
+>同理，对于$\alpha$：l层的神经元向量$\alpha^{l}$,每个神经元的值$\alpha_{j}^{l}$
+
+
