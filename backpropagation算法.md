@@ -16,3 +16,6 @@
 分为两步
 1. $\omega\alpha+b$ 加权求和
 2. 对加权求和整体使用sigmoid函数求出下层的输出值 
+
+>可以使用下面这个方法优化公式在markdown里的效果
+![11](http://latex.codecogs.com/png.latex?aa)
