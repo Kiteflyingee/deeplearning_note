@@ -51,6 +51,6 @@ $$C = \frac{1}{2} \|y-a^L\|^2 = \frac{1}{2} \sum_j (y_j-a^L_j)^2$$
 
 ## backpropagation4个重要公式
 
->定义在l层的第j个神经元的error:$\delta_{l}^{j}$
+>定义在l层的第j个神经元的error$:\delta_{l}^{j}$
 
 ![](2018-05-09-19-08-22.png)
