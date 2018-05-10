@@ -82,7 +82,7 @@ BP3
 
 BP4
 >Cost对权重求偏导:
-$$\frac{\partial C}{\partial w^l_{jk}} = a^{l-1}_k \delta^l_j$$(BP4)
+$$\frac{\partial C}{\partial w^l_{jk}} = a^{l-1}_k \delta^l_j(BP4)$$ 
 写成矩阵形式:
 $$\frac{\partial C}{\partial w} = a_{\rm in} \delta_{\rm out}$$
 
