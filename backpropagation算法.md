@@ -48,7 +48,18 @@ $$C = \frac{1}{2} \|y-a^L\|^2 = \frac{1}{2} \sum_j (y_j-a^L_j)^2$$
 --------------
 
 ## backpropagation4个重要公式
+> 反向传播是关于如何改变网络中的权重和偏差来改变成本函数，这意味着需要计算偏导数$\partial C/\partial\omega^{l}_{jk}$ 和 $\partial C / \partial b ^ l_j$。但为了计算这些，我们首先引入一个中间量，$\delta^l_j$，我们称之为在l层的第j个神经元的error。反向传播计算每一层的$\delta^l_j$，然后将$\delta^l_j$与$\partial C/\partial\omega^{l}_{jk}$ 和 $\partial C / \partial b ^ l_j$关联起来。
+>
+>为了理解错误是如何定义的，想象我们的神经网络中存在一个恶魔：
 
->定义在l层的第j个神经元的error:$\delta_{l}^{j}$
+![](http://neuralnetworksanddeeplearning.com/images/tikz19.png)
+>恶魔对第l层的第j个神经元添加一个变化量$\Delta z ^ l_j$,该神经元输出就变成$\sigma(z ^ l_j + \Delta z ^ l_j)$。这种变化通过网络中的后续层传播，最终导致整体Cost的变化$\frac {\partial C} {\partial z ^ l_j} \Delta z ^ l_j$（简单的高数知识）。
+> 如果这个恶魔是一个好人，它想要帮我们优化Cost，他会尝试一个更小的$\Delta z ^ l_j$使得损失函数更小。假设$\frac {\partial C} {\partial z ^ l_j}$是一个很大的值(不管正负)。然后恶魔通过选择与$\frac {\partial C} {\partial z ^ l_j}$有相反的符号的 $\Delta z ^ l_j$来降低Cost。相反，如果 $\frac {\partial C} {\partial z ^ l_j}$ 接近于零，那么恶魔通过干扰加权输入$z_{j}^{l}$就几乎不能改变Cost,此时，这个神经元已经非常接近最优(再如何优化也不能改变Cost)。<font color='red'>所以这里把$\frac {\partial C} {\partial z ^ l_j}$ 定义为神经元error的度量</font>。
+>于是定义在l层的第j个神经元的error:$\delta_{l}^{j}$
+
+> 我们定义在输出层(L)的第j个神经元的error的方程为:
+$\delta^L_j = \frac{\partial C}{\partial a^L_j} \sigma'(z^L_j) $    (BP1)
+> ##### 解释:其中$\frac{\partial C}{\partial a^L_j} $z这部分衡量Cost相对于第j个神经元activation的输出的变化率,$ \sigma'(z^L_j)$这部分衡量activation方程相对于中间变量$z^{L}_{j}$的变化率
+
 
 ![](2018-05-09-19-08-22.png)
