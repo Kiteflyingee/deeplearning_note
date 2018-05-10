@@ -58,8 +58,9 @@ $$C = \frac{1}{2} \|y-a^L\|^2 = \frac{1}{2} \sum_j (y_j-a^L_j)^2$$
 >于是定义在l层的第j个神经元的error:$\delta_{l}^{j}$
 
 > 我们定义在输出层(L)的第j个神经元的error的方程为:
-$\delta^L_j = \frac{\partial C}{\partial a^L_j} \sigma'(z^L_j) $    (BP1)
-> ##### 解释:其中$\frac{\partial C}{\partial a^L_j} $z这部分衡量Cost相对于第j个神经元activation的输出的变化率,$ \sigma'(z^L_j)$这部分衡量activation方程相对于中间变量$z^{L}_{j}$的变化率
+
+$$\delta^L_j = \frac{\partial C}{\partial a^L_j} \sigma'(z^L_j)     (BP1)$$
+> ###### 解释:其中$\frac{\partial C}{\partial a^L_j} $z这部分衡量Cost相对于第j个神经元activation的输出的变化率,$ \sigma'(z^L_j)$这部分衡量activation方程相对于中间变量$z^{L}_{j}$的变化率
 
 
 ![](2018-05-09-19-08-22.png)
