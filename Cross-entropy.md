@@ -141,6 +141,9 @@ net=network2.Network([784,30,10], cost=network2.CrossEntropyCost)
 net.large_weight_initializer()
 net.SGD(trainDataset, 30, 10, 0.5,evaluation_data=testDataset, monitor_evaluation_accuracy=True)
 ```
+程序效果:
+![](2018-05-18-09-51-59.png)
+学习效果比之前明显加快
 
 ## 总结:
 cross-entropy cost几乎总是比二次cost函数好
