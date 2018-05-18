@@ -119,6 +119,30 @@ $$
 
 ![](2018-05-17-10-51-38.png)
 [具体演示动画参考](http://neuralnetworksanddeeplearning.com/chap3.html#the_cross-entropy_cost_function)
+
+## 用cross-entropy进行手写数字识别
+依然沿用之前的程序
+```python
+#coding=utf-8
+'''
+Created on 2018年5月14日
+
+@author: devkite
+'''
+import mnist_loader
+import network2
+# cross-entropy损失函数test效果
+# cross-entropy不会出现学习缓慢的问题，而且相对二次Cost，学习效果更好
+
+trainDataset,validationDataset,testDataset = mnist_loader.load_data_wrapper()
+# 损失函数使用Cross-entropy
+net=network2.Network([784,30,10], cost=network2.CrossEntropyCost)
+#初始化权重和偏向，和之前初始化方式是一样的,因为在后面章节将会介绍新的初始化方法，所以在这里改了个名字
+net.large_weight_initializer()
+net.SGD(trainDataset, 30, 10, 0.5,evaluation_data=testDataset, monitor_evaluation_accuracy=True)
+```
+
 ## 总结:
 cross-entropy cost几乎总是比二次cost函数好
 如果神经元的方程是线性的, 用二次cost函数 (不会有学习慢的问题)
+
