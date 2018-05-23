@@ -35,5 +35,4 @@
 用之前的神经元的输出公式，改变一下就可以得到相应的输出公式:
 $$\begin{eqnarray} 
   \sigma\left(b + \sum_{l=0}^4 \sum_{m=0}^4  w_{l,m} a_{j+l, k+m} \right)
-  
 \end{eqnarray}$$
